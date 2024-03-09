@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "pergunta": "Uma das aplicações possíveis do LDAP é funcionar como solução para gerenciamento de identidades e acessos, com foco na autenticação de usuários, e incluindo-se suporte para single sign-on.",
+        "resposta": "<p>O LDAP é um protocolo para acessar e manter serviços de diretório distribuído, como o Microsoft Active Directory ou o OpenLDAP. Ele é usado para procurar informações em um sistema de diretório ou para adicionar, modificar e deletar entradas dentro do diretório.</p><p>De acordo com a RedHat, 'O LDAP também funciona como solução de gerenciamento de identidade e acesso (IAM) com foco na autenticação de usuários, incluindo suporte para Kerberos e single sign-on (SSO), Simple Authentication Security Layer (SASL) e Secure Sockets Layer (SSL).</p> <p>'Fonte: https://www.redhat.com/pt-br/topics/security/what-is-ldap </p>",
+        "idMateria": 9
+    },
+    {
+        "id": 2,
+        "pergunta": "DN (distinguished name), CN (common name) e OU (organizational unit) são atributos dos objetos do LDAP. ",
+        "resposta": "<p>LDAP (Lightweight Directory Access Protocol). O LDAP é um protocolo de acesso a diretórios que fornece um meio de localizar, modificar e gerenciar informações em um diretório hierárquico.</p><p>Como ele é usado para localização de informações o uso de:</p> <p>DN = Nome completo de um REGISTRO, Identificação única.</p> <p>CN = Nome do Objeto</p> <p>OU = Nome da Unidade Organizacional</p>",
+        "idMateria": 9
+    },
+    {
+        "id": 3,
+        "pergunta": "Um dos métodos de autenticação usados pelos clientes para a autenticação no LDAP é a autenticação simples, a qual envia credenciais em formato de texto simples em uma requisição de vinculação (bind request) de LDAP. ",
+        "resposta": "<p>Autenticação anônima: nesse método, o cliente se conecta ao servidor enviando uma solicitação de ligação em que o valor do nome de usuário é 0 e o valor da senha tem comprimento 0. A extensão das informações disponíveis para o cliente geralmente é mínima com esse método.</p><p>Autenticação simples: Neste método, o cliente insere seu nome de usuário e senha (texto simples) para vincular-se ao servidor LDAP. O servidor então verifica e autentica as credenciais em relação aos dados mestre armazenados no banco de dados LDAP.</p><p>Autenticação SASL: Neste método, o servidor LDAP usa um mecanismo de autenticação como Kerberos no AD para realizar o processo de autenticação.</p><p>Fonte: <a href=\"https://blogs.manageengine.com/portugues/2022/08/31/lightweight-directory-access-protocol-ldap-para-iniciantes.html\">https://blogs.manageengine.com/portugues/2022/08/31/lightweight-directory-access-protocol-ldap-para-iniciantes.html</a></p><p><a href=\"https://www.cisco.com/c/pt_br/support/docs/security/secure-access-control-system/113473-acs-simple-ldap-00.pdf\">https://www.cisco.com/c/pt_br/support/docs/security/secure-access-control-system/113473-acs-simple-ldap-00.pdf</a></p>",
+        "idMateria": 9
+    }
+]

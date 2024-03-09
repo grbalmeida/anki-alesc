@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Anki Alesc</title>
+</head>
+<body>
+    <h1>Escolha a matéria</h1>
+    <nav>
+        <ul id="materiasContainer">
+
+        </ul>
+    </nav>
+
+    <div id="card-atual">
+
+    </div>
+
+    <button id="botao-proxima-questao" type="button" onClick="exibirQuestaoAleatoria()">Próxima questão</button>
+
+    <script>
+        function exibirQuestaoAleatoria(idMateria) {
+            if (!idMateria) {
+                idMateria = window.idMateria;
+            }
+
+            const questoesMateria = window.perguntas.filter(p => p.materiaId = idMateria);
+            const indice = Math.floor(Math.random() * questoesMateria.length);
+            const questao = questoesMateria[indice];
+
+            window.idMateria = idMateria;
+            
+            const cardAtual = document.getElementById('card-atual');
+            cardAtual.style.backgroundColor = window.materias.find(m => m.id == idMateria).corPrincipal;
+
+            cardAtual.innerHTML = htmlCard(questao.pergunta, idMateria);
+            cardAtual.setAttribute('data-isShowingQuestion', "S");
+
+            cardAtual.onclick = function() {
+                if (this.getAttribute('data-isShowingQuestion') == 'S') {
+                    this.setAttribute('data-isShowingQuestion', 'N');
+                    this.innerHTML = htmlCard(questao.resposta, idMateria)
+                } else {
+                    this.setAttribute('data-isShowingQuestion', 'S');
+                    this.innerHTML = htmlCard(questao.pergunta, idMateria)
+                }
+            }
+        }
+
+        function htmlCard(questao, idMateria) {
+            return `
+                <div>${questao}</div>
+            `
+        }
+
+        function carregarMaterias() {
+            const materiasContainer = document.getElementById('materiasContainer');
+
+            fetch('./perguntas.json')
+                .then(response => response.json())
+                .then(data => {
+                    window.perguntas = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o arquivo de perguntas:', error);
+                });
+
+            fetch('./materias.json')
+                .then(response => response.json())
+                .then(data => {
+                    window.materias = data;
+
+                    data.forEach(materia => {
+                        materiasContainer.innerHTML += `
+                            <li id="materia-${materia.id}" class="materia-card" style="background-color: ${materia.corPrincipal}" onClick="exibirQuestaoAleatoria(${materia.id})">
+                                ${materia.nome}
+                            </li>
+                        `;
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o arquivo de matérias:', error);
+                });
+        }
+
+        window.onload = carregarMaterias();
+    </script>
+</body>
+</html>

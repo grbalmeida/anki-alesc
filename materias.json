@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "nome": "Engenharia de Software",
+        "corPrincipal": "#2C3E50"
+    },
+    {
+        "id": 2,
+        "nome": "Gestão de Projetos",
+        "corPrincipal": "#34495E"
+    },
+    {
+        "id": 3,
+        "nome": "Boas práticas de desenvolvimento de software",
+        "corPrincipal": "#7F8C8D"
+    },
+    {
+        "id": 4,
+        "nome": "Desenvolvimento de software",
+        "corPrincipal": "#8E44AD"
+    },
+    {
+        "id": 5,
+        "nome": "Frameworks",
+        "corPrincipal": "#2980B9"
+    },
+    {
+        "id": 6,
+        "nome": "Versionamento de código",
+        "corPrincipal": "#2E4053"
+    },
+    {
+        "id": 7,
+        "nome": "Bancos de Dados",
+        "corPrincipal": "#16A085"
+    },
+    {
+        "id": 8,
+        "nome": "Infraestrutura de TIC",
+        "corPrincipal": "#27AE60"
+    },
+    {
+        "id": 9,
+        "nome": "Redes de Computadores",
+        "corPrincipal": "#F39C12"
+    },
+    {
+        "id": 10,
+        "nome": "Segurança da Informação",
+        "corPrincipal": "#D35400"
+    },
+    {
+        "id": 11,
+        "nome": "Regimento interno ALESC",
+        "corPrincipal": "#C0392B"
+    }
+]
